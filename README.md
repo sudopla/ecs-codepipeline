@@ -27,7 +27,7 @@ CodePipeline
      files:
        - imagedefinitions.json
     ```
-3. ECS updates the service with the new task revision that it created. This task uses the container images defined in the *imagedefinitions.json* file
+3. ECS updates the service with a new task revision. This task uses the container image defined in the *imagedefinitions.json* file
 4. Users can connect to the application through the ALB configured in front of the application containers
 
 <img src="img/pipeline_1.png" width="100%">
@@ -36,7 +36,7 @@ CodePipeline
 Deployment
 ---------------
 
-First, you run the template [ecs_app.yaml](ecs_app.yaml) to configure the ECS cluster, task definition and services. A new VPC, subnets, ALB, role and security groups are also created with this template. 
+First, you run the template [ecs_app.yaml](ecs_app.yaml) to configure the ECS cluster, task definition and service. A new VPC, subnets, ALB, role and security group are also created with this template. 
 
 Please notice that initially you can use any Docker image (nginx in this case). The application will be deployed later when the Pipepile runs. 
 
