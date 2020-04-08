@@ -40,11 +40,11 @@ First, you run the template [ecs_app.yaml](ecs_app.yaml) to configure the ECS cl
 
 Please notice that initially you can use any Docker image (nging in this case). The application will be deployed later when the Pipepile runs. 
 
-<img src="img/screenshot_1.png" width="80%">
+<img src="img/screenshot_1.png" width="60%">
 
 Then, you can create a new stack with the CodePipeline CloudFormation template [codepipeline.yaml](codepipeline.yaml).
 
-<img src="img/screenshot_2.png" width="80%">
+<img src="img/screenshot_2.png" width="60%">
 
 
 
