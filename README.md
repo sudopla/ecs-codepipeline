@@ -7,7 +7,7 @@ CodePipeline
 ------------
 
 1. The Pipeline will run every time new code is pushed to the master branch of the CodeCommit repository 
-2. CodeBuild executes the commands specified in the [buildspec.yml](buildspec.yml) file
+2. CodeBuild executes the commands specified in the [buildspec.yml](buildspec.yml) file </br>
    2.1 It creates a Docker image using the [Dockerfile](Dockerfile) and tag it with the ECR repository name. 
    ```
    docker build -t web_app:latest .
