@@ -1,0 +1,49 @@
+a:hover {
+ cursor:pointer;
+}
+.loader {
+    position: fixed;
+    left: 47%;
+    top: 40%;
+    z-index: 1000;
+    display: none;
+    border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  border-bottom: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/** Costs **/
+@media (min-width: 768x){
+    .costPieCharts {
+        min-width: 448px !important;
+    }
+}
+@media (min-width: 992px){
+    .costPieCharts {
+        min-width: 448px !important;
+    }
+}
+@media (min-width: 1610px){
+  .costBarChart {
+        width: 1340px !important;
+    }
+}
+@media (min-width: 920px) and (max-width: 1609px){
+  .costBarChart {
+        width: 895px !important;
+    }
+}

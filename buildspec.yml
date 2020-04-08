@@ -1,0 +1,28 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+    - echo Logging in to Amazon ECR....
+    - aws --version
+    # Log into ECR registry
+    - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+    - ECR_URI=$REPOSITORY_URI:latest
+  build:
+    commands:
+    - echo Build started on `date`
+    - echo Building the Docker image...
+    # Build docker image
+    - docker build -t web_app:latest .
+    # update the following line with the URI of your own ECR repository
+    - docker tag web_app:latest $ECR_URI
+  post_build:
+    commands:
+    - echo Build completed on `date`
+    - echo pushing to repo
+    # update the following line with the URI of your own ECR repository
+    - docker push $ECR_URI
+    - echo Writing image definitions file...
+    - printf '[{"name":"%s","imageUri":"%s"}]' $ContainerDefinitionName $ECR_URI > imagedefinitions.json
+artifacts:
+  files:
+    - imagedefinitions.json
